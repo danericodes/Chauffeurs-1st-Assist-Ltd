@@ -1,0 +1,30 @@
+.quick-check{display:grid;gap:8px}.quick-check select{width:100%;padding:11px 12px;border:1px solid rgba(255,255,255,.2);background:#101a22;color:#fff}.quick-check__result{padding:12px 0;color:#d7dfe5;font-size:.86rem;border-top:1px solid rgba(255,255,255,.12)}
+.quick-check__label{display:block;font-size:.85rem;color:#c7ced8;margin-bottom:2px}.quick-check__note{margin:0;color:#98a3b0;font-size:.74rem;line-height:1.5}
+
+/* ---- Select: custom arrow, brass focus glow ---- */
+.quick-check select{
+  appearance:none; -webkit-appearance:none;
+  padding-right:38px; cursor:pointer;
+  background-color:#101a22;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%23d2ad70' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat; background-position:right 14px center;
+  transition:border-color .25s ease, box-shadow .25s ease;
+}
+.quick-check select:hover{border-color:rgba(210,173,112,.6)}
+.quick-check select:focus-visible{
+  outline:none;
+  border-color:var(--brass-light);
+  box-shadow:0 0 0 3px rgba(210,173,112,.22);
+}
+
+/* ---- Result: icon + text, fades up each time the airport changes ---- */
+.quick-check__result{
+  display:flex; align-items:flex-start; gap:10px;
+  animation:qc-swap .4s cubic-bezier(.22,1,.36,1) both;
+}
+.quick-check__result svg{flex:none; margin-top:2px; color:var(--brass-light)}
+@keyframes qc-swap{
+  from{opacity:0; transform:translateY(6px)}
+  to  {opacity:1; transform:translateY(0)}
+}
+@media (prefers-reduced-motion:reduce){ .quick-check__result{animation:none} }

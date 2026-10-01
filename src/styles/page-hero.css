@@ -1,0 +1,18 @@
+.page-hero { position:relative; 
+    overflow:hidden; 
+    background:linear-gradient(115deg,#0a1926,#173349); 
+    color:#fff; 
+    padding:105px 0 92px; 
+    background-size:cover; background-position:center; }
+.page-hero::before { content:''; position:absolute; width:600px; height:600px; right:-260px; top:-350px; border:1px solid rgba(215,181,117,.16); border-radius:50%; box-shadow:0 0 0 70px rgba(215,181,117,.018),0 0 0 140px rgba(215,181,117,.014); }
+.page-hero::after { content:''; position:absolute; left:0; bottom:0; width:35%; height:1px; background:linear-gradient(90deg,var(--brass-light),transparent); }
+.page-hero .container { position:relative; z-index:1; }
+.page-hero .eyebrow { color:var(--brass-light); }
+.page-hero h1 { color:#fff; font-size:clamp(2.35rem,5.4vw,4.3rem); max-width:17ch; }
+.page-hero p { color:#cbd5dd; max-width:64ch; font-size:1rem; }
+.page-hero--services { padding-top:119px; background-image:linear-gradient(90deg,rgba(15,15,14,.88),rgba(15,15,14,.46)),url('/images/services-hero.jpg'); }
+.page-hero--fleet { background-image:linear-gradient(90deg,rgba(15,15,14,.88),rgba(15,15,14,.42)),url('/images/fleet-hero.jpg'); }
+.page-hero--about { background-image:linear-gradient(90deg,rgba(15,15,14,.9),rgba(15,15,14,.5)),url('/images/About-hero.avif'); }
+.page-hero--contact { background-image:linear-gradient(90deg,rgba(15,15,14,.9),rgba(15,15,14,.46)),url('/images/contact-hero.avif'); }
+.page-hero--quote { background-image:linear-gradient(90deg,rgba(15,15,14,.9),rgba(15,15,14,.5)),url('/images/Quote-image.jpg'); }
+@media(max-width:700px){ .page-hero{padding:72px 0 64px;background-position:62% center}.page-hero h1{font-size:clamp(2.2rem,12vw,3.25rem)} }

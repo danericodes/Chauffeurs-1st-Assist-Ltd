@@ -1,0 +1,91 @@
+.service-card,.step-card,.fleet-feature{position:relative}
+
+.service-card::before,.step-card::before,.fleet-feature::before{content:'';display:block;width:34px;height:1px;background:var(--brass);margin-bottom:24px}
+.service-card .eyebrow{margin-bottom:12px}
+.text-link{color:var(--navy);font-weight:600;text-decoration:none;border-bottom:1px solid #b7b7b0;padding-bottom:2px}
+.text-link:hover{color:var(--brass);border-color:var(--brass)}
+
+.hero
+    {position:relative;
+        min-height:690px;
+        display:flex;
+        align-items:stretch;
+        overflow:hidden;
+        color:#fff;
+        background:#101a22 url('/images/4.jpg') center/cover no-repeat}
+
+
+
+.hero::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(7,14,20,.88) 0%,rgba(7,14,20,.68) 48%,rgba(7,14,20,.30) 100%)}
+.hero__grid{position:relative;z-index:1;width:min(var(--max),calc(100% - 56px));margin:auto;padding:118px 0 105px;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(300px,.8fr);gap:56px;align-items:center}
+.hero__panel{background:rgba(10,20,28,.82);border:1px solid rgba(255,255,255,.17);border-radius:0;backdrop-filter:blur(4px)}
+.hero h1{color:#fff;font-size:clamp(3rem,6vw,5.8rem);max-width:12ch;letter-spacing:-.04em}
+.image-card{border-radius:0;overflow:hidden;position:relative;min-height:390px;background:var(--navy)}
+.image-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .9s cubic-bezier(.16,1,.3,1),filter .6s ease}
+.image-card:hover img{transform:scale(1.055);filter:saturate(1.05)}
+.image-card::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(5,11,16,.9));pointer-events:none}
+.image-card__overlay{position:absolute;inset:auto 0 0;padding:31px;background:linear-gradient(transparent,rgba(5,12,18,.9));color:#fff;z-index:1}
+.image-card__overlay h3{color:#fff;margin-bottom:5px}.image-card__overlay p{color:#d7dfe5;margin:0;font-size:.88rem}
+.trustbar{background:#171717;color:#fff;border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08);overflow:hidden}
+.trustbar__row{width:min(var(--max),calc(100% - 56px));min-height:92px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);counter-reset:trust}
+.trustbar__item{position:relative;display:flex;align-items:center;gap:14px;min-height:92px;padding:18px 24px;color:#e6e1d8;font-size:.79rem;line-height:1.4;text-align:left;border-right:1px solid rgba(255,255,255,.1);opacity:0;transform:translateY(14px);animation:trustIn .65s cubic-bezier(.16,1,.3,1) forwards}
+.trustbar__item:nth-child(1){animation-delay:.05s}.trustbar__item:nth-child(2){animation-delay:.15s}.trustbar__item:nth-child(3){animation-delay:.25s}.trustbar__item:nth-child(4){animation-delay:.35s}.trustbar__item:last-child{border-right:0}
+.trustbar__item::before{content:counter(trust);counter-increment:trust;flex:0 0 30px;width:30px;height:30px;display:grid;place-items:center;border:1px solid rgba(178,138,85,.7);color:#c7a16b;font-family:var(--font-display);font-size:.72rem}
+@keyframes trustIn{to{opacity:1;transform:translateY(0)}}
+.booking-strip{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.booking-strip__item{padding:24px 22px;border-right:1px solid var(--line)}.booking-strip__item:last-child{border-right:0}.booking-strip__item strong{display:block;margin-bottom:5px;color:var(--ink);font-family:var(--font-display);font-size:1rem;font-weight:400}.booking-strip__item span{color:var(--muted);font-size:.82rem}
+.section--navy{position:relative;overflow:hidden;background:#20201e;color:#eeeae0}.section--navy.section--tight{background-image:linear-gradient(rgba(17,17,16,.76),rgba(17,17,16,.82)),url('/images/section-background.jpg');background-size:cover;background-position:center 45%}.section--navy.section--tight::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(17,17,16,.25),rgba(17,17,16,.05),rgba(17,17,16,.28));pointer-events:none}.section--navy.section--tight>.container{position:relative;z-index:1}.section--navy h2,.section--navy .section-head h2{color:#fffaf0}.section--navy p,.section--navy .section-head p{color:#d0cbc1}
+.coverage-list li{border-color:rgba(255,255,255,.14)}
+@media(max-width:1020px){.container,.trustbar__row,.hero__grid{width:min(var(--max),calc(100% - 44px))}.trustbar__row{grid-template-columns:1fr 1fr}.trustbar__item:nth-child(2){border-right:0}.trustbar__item:nth-child(-n+2){border-bottom:1px solid rgba(255,255,255,.1)}}
+@media(max-width:700px){.trustbar__row{width:100%;display:flex;flex-direction:column}.trustbar__item{min-height:76px;padding:14px 22px;border-right:0;border-bottom:1px solid rgba(255,255,255,.1);font-size:.76rem}.trustbar__item:last-child{border-bottom:0}.trustbar__item::before{flex-basis:28px;width:28px;height:28px}.hero{min-height:650px;background-position:65% center}.hero__grid{width:calc(100% - 36px);padding:92px 0 74px}.hero h1{font-size:clamp(2.7rem,13vw,4rem)}.section--navy.section--tight{background-position:64% center}.booking-strip{grid-template-columns:1fr}.booking-strip__item{border-right:0;border-bottom:1px solid var(--line)}.booking-strip__item:last-child{border-bottom:0}}
+@media(prefers-reduced-motion:reduce){.trustbar__item{animation:none;opacity:1;transform:none}}
+
+/* ---- Hero content (these classes were used in Home.jsx but had no styles) ---- */
+.hero__eyebrow{color:var(--brass-light);font-size:.7rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;margin-bottom:18px}
+.hero p{color:#d7dfe5;font-size:1.05rem;max-width:52ch}
+.hero__actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}
+.hero__panel{padding:30px}
+.hero__panel-title{font-family:var(--font-display);font-size:1.25rem;color:#fff;margin-bottom:6px}
+.hero__panel-subtitle{color:#c7ced8;font-size:.86rem;line-height:1.5;margin-bottom:22px}
+@media(max-width:900px){.hero__grid{grid-template-columns:1fr;gap:38px}}
+@media(max-width:700px){.hero__panel{padding:24px}}
+
+/* ---- "1st Assist approach" feature block ---- */
+.home-feature{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:72px;align-items:center}
+.home-feature__image{position:relative;min-height:520px;overflow:hidden;background:var(--navy)}
+.home-feature__image img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.home-feature__list{margin-top:28px;border-top:1px solid var(--line)}
+.home-feature__item{display:grid;grid-template-columns:44px 1fr;gap:16px;padding:20px 0;border-bottom:1px solid var(--line)}
+.home-feature__icon{font-family:var(--font-display);font-size:1.15rem;line-height:1.3}
+.home-feature__item h3{margin-bottom:.3em}
+.home-feature__item p{margin:0;font-size:.92rem}
+@media(max-width:900px){.home-feature{grid-template-columns:1fr;gap:40px}.home-feature__image{min-height:340px}}
+
+/* ---- Coverage chips (was an unstyled bulleted list) ---- */
+.coverage-list{list-style:none;margin:0 0 38px;padding:0;display:flex;flex-wrap:wrap;gap:10px}
+.coverage-list li{padding:10px 18px;border:1px solid rgba(255,255,255,.14);color:#eeeae0;font-size:.86rem;letter-spacing:.02em}
+.image-card__overlay .eyebrow{color:var(--brass-light);margin-bottom:8px}
+
+/* ---- Hero panel: polish + small animations ---- */
+.hero__panel{
+  position:relative;
+  box-shadow:0 28px 60px rgba(0,0,0,.35);
+  transition:border-color .35s ease, box-shadow .35s ease;
+}
+.hero__panel:hover{
+  border-color:rgba(210,173,112,.45);               /* brass-light, softly */
+  box-shadow:0 34px 70px rgba(0,0,0,.42);
+}
+/* gold line along the top that "draws" itself in after the panel appears */
+.hero__panel::before{
+  content:'';
+  position:absolute; top:-1px; left:-1px; right:-1px; height:3px;
+  background:linear-gradient(90deg,var(--brass-light),var(--brand-accent));
+  transform-origin:left center;
+  animation:panel-line .9s .55s cubic-bezier(.22,1,.36,1) both;
+}
+@keyframes panel-line{ from{transform:scaleX(0)} to{transform:scaleX(1)} }
+
+@media (prefers-reduced-motion:reduce){
+  .hero__panel::before{animation:none}
+}
